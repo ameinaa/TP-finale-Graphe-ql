@@ -1,7 +1,13 @@
 -- Categories 
 INSERT INTO category (category_name, parent_category_id)
-SELECT CONCAT('Category ', X), NULL
+SELECT
+  CONCAT('Category ', X),
+  CASE 
+    WHEN MOD(X, 2) = 0 THEN X - 1
+    ELSE NULL
+  END
 FROM SYSTEM_RANGE(1, 20);
+
 
 --️⃣ Authors
 INSERT INTO author (name, age, nationality)
