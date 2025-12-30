@@ -1,5 +1,11 @@
 package rs.spai.demoQL;
 
-public class BookPage {
+import lombok.*;
 
+import java.util.List;
+
+@Data @AllArgsConstructor
+public class BookPage {
+    private List<Book> list;
+    private PageInfo pageInfo;
 }
